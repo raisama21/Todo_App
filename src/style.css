@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Josefin Sans", sans-serif;
+  }
+
+  body {
+    @apply bg-lt-2;
+  }
+}
+
+@layer components {
+  .text::before {
+    @apply content-[""] h-5 w-5 border-2 border-lt-4 rounded-full cursor-pointer sm:h-6 sm:w-6;
+  }
+
+  .text:hover::before,
+  .check:hover + .text::before {
+    @apply bg-gradient-to-t from-lg2-bg to-lg1-bg;
+  }
+
+  .check:checked + .text::before {
+    @apply content-["\002714"] bg-gradient-to-t from-lg2-bg to-lg1-bg text-lt-1 flex
+    justify-center items-end sm:justify-center sm:items-start;
+  }
+
+  .todo-item .text::after {
+    @apply content-[""] h-[2px] w-[100%] bg-current absolute top-[41.5%] left-[1.8rem] scale-x-0 origin-right sm:top-[47.7%] sm:left-[2rem];
+  }
+
+  .check:checked + .text::after {
+    @apply scale-x-100 origin-left;
+  }
+}
+
+@layer utilities {
+  header {
+    @apply bg-mobile-img h-[12.5rem] bg-no-repeat sm:bg-desktop-img sm:h-[18.75];
+  }
+
+  .logo {
+    @apply font-black text-2xl tracking-[0.75rem] text-lt-1 cursor-pointer sm:text-3xl sm:tracking-[1rem];
+  }
+
+  .todo-item {
+    @apply relative;
+  }
+
+  .checked {
+    @apply opacity-50;
+  }
+
+  .inner-list {
+    @apply flex justify-between items-center py-14px px-5 text-xs font-normal text-lt-5 border-b-2 border-lt-4/30 sm:py-5 sm:px-6 sm:text-base cursor-pointer;
+  }
+
+  .text {
+    @apply flex gap-3 w-[100%] relative;
+  }
+
+  .check {
+    @apply h-5 w-5 opacity-0 absolute sm:w-6 sm:h-6 cursor-pointer;
+  }
+
+  button {
+    @apply text-xs font-medium text-lt-4  sm:text-base hover:text-lt-blue hover:cursor-pointer;
+  }
+
+  label {
+    @apply cursor-pointer;
+  }
+
+  .transition {
+    @apply duration-200 ease-in;
+  }
+
+  .dragging {
+    @apply bg-white shadow-xl;
+  }
+}

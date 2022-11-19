@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./script.js"></script>
+
+  <title>Frontend Mentor | Todo app</title>
+</head>
+
+<body>
+  <header class="max-w-[23.4375rem] mx-auto sm:min-w-full">
+    <div class="max-w-sm mx-auto pt-12 pb-10 flex justify-between sm:max-w-md sm:pt-20 sm:pb-12">
+      <div class="logo">TODO</div>
+      <div>
+        <img src="./images/icon-moon.svg" alt="moon icon" class="cursor-pointer" />
+      </div>
+    </div>
+  </header>
+
+  <main class="absolute max-w-[23.4375rem] mx-auto left-0 right-0 top-[15%] sm:min-w-full sm:top-[25%]">
+    <div class="max-w-sm mx-auto sm:max-w-md">
+      <div class="relative mb-5 sm:mb-6">
+        <form action="/" class="form">
+          <input type="text" placeholder="Create a new todo..."
+            class="todo-input | w-full py-14px px-5 bg-lt-1 text-lt-4 rounded-lg sm:py-5 sm:px-6;" />
+        </form>
+      </div>
+
+      <ul class="lists draggable-lists | bg-lt text-lt-5 shadow-lg rounded-t-lg">
+      </ul>
+
+      <div class="relative flex items-center justify-between px-5 py-14px bg-lt rounded-b-lg">
+        <button class="item-left | transition" type="button">5 items left</button>
+        <div
+          class="absolute py-14px inset-[0%] flex justify-center gap-4 translate-y-[150%] rounded-lg shadow-lg bg-lt sm:relative sm:bg-transparent sm:translate-y-[0%] sm:py-0 sm:shadow-none">
+          <button class="all transition" type="button">All</button>
+          <button class="active transition" type="button">Active</button>
+          <button class="completed transition" type="button">
+            Completed
+          </button>
+        </div>
+        <button class="clear-completed transition" type="button">
+          Clear Completed
+        </button>
+      </div>
+    </div>
+    <p class="text-center mt-28 text-lt-4 font-normal sm:mt-14">
+      Drag and drop to reorder list
+    </p>
+  </main>
+</body>
+
+</html>
+
+<!-- 
+Jog around the park 3x
+10 minutes meditation
+Read for hour
+Pick up groceries
+Complete Todo App in Frontend Mentor
+-->
