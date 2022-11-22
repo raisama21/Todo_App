@@ -8,7 +8,13 @@
   }
 
   body {
-    @apply bg-lt-2;
+    @apply bg-lt-2 dark:bg-dt-1;
+  }
+
+  li,
+  .todo-input,
+  .buttons {
+    @apply dark:bg-dt-2;
   }
 }
 
@@ -49,12 +55,8 @@
     @apply relative;
   }
 
-  .checked {
-    @apply opacity-50;
-  }
-
   .inner-list {
-    @apply flex justify-between items-center py-14px px-5 text-xs font-normal text-lt-5 border-b-2 border-lt-4/30 sm:py-5 sm:px-6 sm:text-base cursor-pointer;
+    @apply flex justify-between items-center py-14px px-5 text-xs font-normal text-lt-5 border-b-2 border-lt-4/30 sm:py-5 sm:px-6 sm:text-base cursor-pointer dark:border-dt-6/30;
   }
 
   .text {
@@ -66,18 +68,26 @@
   }
 
   button {
-    @apply text-xs font-medium text-lt-4  sm:text-base hover:text-lt-blue hover:cursor-pointer;
+    @apply text-xs font-medium text-lt-4  sm:text-base hover:text-lt-5 focus:text-lt-blue dark:hover:text-dt-4 hover:cursor-pointer;
   }
 
   label {
-    @apply cursor-pointer;
+    @apply dark:text-dt-3 cursor-pointer;
   }
 
   .transition {
     @apply duration-200 ease-in;
   }
 
+  .checked label {
+    @apply text-lt-3 dark:text-lt-5;
+  }
+
   .dragging {
     @apply bg-white shadow-xl;
+  }
+
+  .hide {
+    @apply hidden;
   }
 }
