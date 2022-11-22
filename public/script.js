@@ -19,7 +19,7 @@ function getFromLocalStorage() {
     todoItems = ITEMS_FROM_LOCAL_STORAGE;
     render();
   }
-  itemCount();
+  // itemCount();
 }
 
 function addTodo(e) {
@@ -35,6 +35,7 @@ function addTodo(e) {
   todoItems.push(todo);
   saveToLocalStorage();
   render();
+  itemCount();
 
   todoInput.value = null;
 }
@@ -77,6 +78,7 @@ function deleteTodoItem(key) {
   todoItems = todoItems.filter((item) => item.id !== key);
   saveToLocalStorage();
   render();
+  itemCount();
 }
 
 function renderAll() {
@@ -117,6 +119,7 @@ function deleteCompleted() {
   todoItems = todoItems.filter((item) => item.completed !== true);
   saveToLocalStorage();
   render();
+  itemCount();
 }
 
 function itemCount() {
